@@ -1,29 +1,27 @@
-import PropTypes from 'prop-types'
-import { Box, Toolbar } from "@mui/material"
+import PropTypes from 'prop-types';
+import { Box, Toolbar } from '@mui/material';
 import { Navbar, Sidebar } from '../components';
 
 const drawerWidth = 240;
 
 export const JournalLayout = ({ children }) => {
-    return (
-        <Box sx={{ display: 'flex' }}>
-            <Navbar drawerWidth={drawerWidth} />
+  return (
+    <Box
+      sx={{ display: 'flex' }}
+      className='animate__animated animate__fadeIn animate__faster'>
+      <Navbar drawerWidth={drawerWidth} />
 
-            <Sidebar drawerWidth={drawerWidth} />
+      <Sidebar drawerWidth={drawerWidth} />
 
-            <Box
-                component="main"
-                sx={{ flexGrow: 1, p: 3 }}
-            >
-                <Toolbar />
+      <Box component='main' sx={{ flexGrow: 1, p: 3 }}>
+        <Toolbar />
 
-                {children}
-
-            </Box>
-        </Box>
-    )
-}
+        {children}
+      </Box>
+    </Box>
+  );
+};
 
 JournalLayout.propTypes = {
-    children: PropTypes.array.isRequired
-}
+  children: PropTypes.array.isRequired,
+};
